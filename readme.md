@@ -1,9 +1,9 @@
 # Lazy Loading in Hibernate with Spring Boot (and avoiding MultipleBagFetchException)
 
 ## Scenario: 
-Company entity has two Collections (in the form of Lists), one each for Product and Employee.
-a. If I make the FetchType for both collections as EAGER, hibernate throws MultipleBagFetchException.
-b. If I make both of them LAZY, when I am trying to access the LAZY collection, hibernate throws LazyInitializationException, saying could not initializeproxy - no session.
+Company entity has two Collections (in the form of Lists), one each for Product and Employee.  
+a. If I make the FetchType for both collections as EAGER, hibernate throws MultipleBagFetchException.  
+b. If I make both of them LAZY, when I am trying to access the LAZY collection, hibernate throws LazyInitializationException, saying could not initializeproxy - no session.  
 
 ## Solutions:
 1. Make one of the collections in the Company class into a Set. This will avoid the MultipleBagFetchException and you can carry on with both having FetchType as EAGER.
